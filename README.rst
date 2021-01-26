@@ -98,6 +98,15 @@ You will need to implement the following methods:
             """
             return "summary_large_photo"
 
+If you are not using Wagtail Image, you will need to additionally implement the following method:
+
+.. code-block:: python
+
+    def get_meta_image_url(self, request):
+        """The URL of the image to show. Optional."""
+        return request.build_absolute_uri(self.some_image.url)
+    
+
 
 Display
 =======
